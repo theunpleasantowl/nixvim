@@ -5,7 +5,9 @@
 
     # Completion
     ./cmp/autopairs.nix
-    ./cmp/cmp.nix
+    #./cmp/cmp.nix
+    ./cmp/blink-cmp.nix
+    ./cmp/lspkind.nix
     ./cmp/lspkind.nix
     ./cmp/schemastore.nix
 
