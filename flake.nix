@@ -1,5 +1,5 @@
 {
-  description = "A nixvim configuration";
+  description = "Custom NixVim Distribution";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -49,7 +49,7 @@
         packages = {
           # Lets you run `nix run .` to start nixvim
           default = nvim;
-	  allow.Unfree = true;
+          allow.Unfree = true;
         };
       };
     };
