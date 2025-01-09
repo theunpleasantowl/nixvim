@@ -49,7 +49,7 @@
         packages = {
           # Lets you run `nix run .` to start nixvim
           default = nvim;
-	  allow.Unfree = true;
+          allow.Unfree = true;
         };
       };
     };
