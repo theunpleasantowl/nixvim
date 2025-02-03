@@ -120,6 +120,8 @@
             ]
           ];
           terraform = ["terraform_fmt"];
+          zig = ["zigfmt"];
+          haskell = ["ormolu"];
           bicep = ["bicep"];
           bash = [
             "shellcheck"
