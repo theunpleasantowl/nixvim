@@ -2,21 +2,16 @@
   plugins.startup = {
     enable = true;
 
-    colors = {
-      background = "#ffffff";
-      foldedSection = "#ffffff";
-    };
-
-    sections = {
+    settings = {
       header = {
         type = "text";
-        oldfilesDirectory = false;
+        oldfiles_directory = false;
         align = "center";
-        foldSection = false;
+        fold_section = false;
         title = "Header";
         margin = 5;
         content = [
-	  "   ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆          "
+          "   ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆          "
           "    ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦       "
           "          ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄     "
           "           ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀⠄⠢⣀⡀⠈⠙⠿⠄    "
@@ -29,20 +24,20 @@
           "       ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     "
         ];
         highlight = "Statement";
-        defaultColor = "";
-        oldfilesAmount = 0;
+        default_color = "";
+        oldfiles_amount = 0;
       };
 
       body = {
         type = "mapping";
-        oldfilesDirectory = false;
+        oldfiles_directory = false;
         align = "center";
-        foldSection = false;
+        fold_section = false;
         title = "Menu";
         margin = 5;
         content = [
           [
-            " Find File"
+            " Find File"
             "Telescope find_files"
             "ff"
           ]
@@ -52,34 +47,56 @@
             "fr"
           ]
           [
-            " Recent Files"
+            " Recent Files"
             "Telescope oldfiles"
             "fg"
           ]
           [
-            " File Browser"
+            " File Browser"
             "Telescope file_browser"
             "fe"
           ]
           [
-            " Theme Colours"
+            " Theme Colours"
             "Telescope colorscheme"
             "tc"
           ]
         ];
-        highlight = "string";
-        defaultColor = "";
-        oldfilesAmount = 0;
+        highlight = "String";
+        default_color = "";
+        oldfiles_amount = 0;
       };
-    };
 
-    options = {
-      paddings = [1 3];
-    };
+      options = {
+        mapping_keys = true;
+        cursor_column = 0.5;
+        empty_lines_between_mappings = true;
+        disable_statuslines = true;
+        paddings = [
+          1
+          3
+          3
+          0
+        ];
+      };
 
-    parts = [
-      "header"
-      "body"
-    ];
+      mappings = {
+        execute_command = "<CR>";
+        open_file = "o";
+        open_file_split = "<c-o>";
+        open_section = "<TAB>";
+        open_help = "?";
+      };
+
+      colors = {
+        background = "#1f2227";
+        folded_section = "#56b6c2";
+      };
+
+      parts = [
+        "header"
+        "body"
+      ];
+    };
   };
 }

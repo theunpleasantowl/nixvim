@@ -2,7 +2,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   config = {
     extraConfigLuaPre =
       # lua
@@ -77,59 +78,50 @@
         '';
         notify_on_error = true;
         formatters_by_ft = {
-          html = [
-            [
-              "prettierd"
-              "prettier"
-            ]
-          ];
-          css = [
-            [
-              "prettierd"
-              "prettier"
-            ]
-          ];
-          javascript = [
-            [
-              "prettierd"
-              "prettier"
-            ]
-          ];
-          typescript = [
-            [
-              "prettierd"
-              "prettier"
-            ]
-          ];
+          html = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "prettier";
+            stop_after_first = true;
+          };
+          css = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "prettier";
+            stop_after_first = true;
+          };
+          javascript = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "prettier";
+            stop_after_first = true;
+          };
+          typescript = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "prettier";
+            stop_after_first = true;
+          };
           python = [
             "black"
             "isort"
           ];
-          lua = ["stylua"];
-          nix = ["alejandra"];
-          markdown = [
-            [
-              "prettierd"
-              "prettier"
-            ]
-          ];
-          yaml = [
-            [
-              "prettierd"
-              "prettier"
-            ]
-          ];
-          terraform = ["terraform_fmt"];
-          zig = ["zigfmt"];
-          haskell = ["ormolu"];
-          bicep = ["bicep"];
+          lua = [ "stylua" ];
+          nix = [ "nixfmt" ];
+          markdown = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "prettier";
+            stop_after_first = true;
+          };
+          yaml = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "prettier";
+            stop_after_first = true;
+          };
+          bicep = [ "bicep" ];
           bash = [
             "shellcheck"
             "shellharden"
             "shfmt"
           ];
-          json = ["jq"];
-          "_" = ["trim_whitespace"];
+          json = [ "jq" ];
+          "_" = [ "trim_whitespace" ];
         };
 
         formatters = {
@@ -139,8 +131,8 @@
           isort = {
             command = "${lib.getExe pkgs.isort}";
           };
-          alejandra = {
-            command = "${lib.getExe pkgs.alejandra}";
+          nixfmt = {
+            command = "${lib.getExe pkgs.nixfmt}";
           };
           jq = {
             command = "${lib.getExe pkgs.jq}";
@@ -163,9 +155,9 @@
           bicep = {
             command = "${lib.getExe pkgs.bicep}";
           };
-          #yamlfmt = {
-          #  command = "${lib.getExe pkgs.yamlfmt}";
-          #};
+          yamlfmt = {
+            command = "${lib.getExe pkgs.yamlfmt}";
+          };
         };
       };
     };
