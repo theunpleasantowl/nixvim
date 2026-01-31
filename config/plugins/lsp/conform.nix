@@ -2,7 +2,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   config = {
     extraConfigLuaPre =
       # lua
@@ -105,8 +106,8 @@
             "black"
             "isort"
           ];
-          lua = ["stylua"];
-          nix = ["alejandra"];
+          lua = [ "stylua" ];
+          nix = [ "nixfmt" ];
           markdown = [
             [
               "prettierd"
@@ -119,17 +120,17 @@
               "prettier"
             ]
           ];
-          terraform = ["terraform_fmt"];
-          zig = ["zigfmt"];
-          haskell = ["ormolu"];
-          bicep = ["bicep"];
+          terraform = [ "terraform_fmt" ];
+          zig = [ "zigfmt" ];
+          haskell = [ "ormolu" ];
+          bicep = [ "bicep" ];
           bash = [
             "shellcheck"
             "shellharden"
             "shfmt"
           ];
-          json = ["jq"];
-          "_" = ["trim_whitespace"];
+          json = [ "jq" ];
+          "_" = [ "trim_whitespace" ];
         };
 
         formatters = {
@@ -139,8 +140,8 @@
           isort = {
             command = "${lib.getExe pkgs.isort}";
           };
-          alejandra = {
-            command = "${lib.getExe pkgs.alejandra}";
+          nixfmt = {
+            command = "${lib.getExe pkgs.nixfmt}";
           };
           jq = {
             command = "${lib.getExe pkgs.jq}";
