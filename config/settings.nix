@@ -4,10 +4,16 @@
     extraConfigLuaPre =
       # Define custom signs for different types of diagnostic messages
       ''
-        vim.fn.sign_define("diagnosticsignerror", { text = " ", texthl = "diagnosticerror", linehl = "", numhl = "" })
-        vim.fn.sign_define("diagnosticsignwarn", { text = " ", texthl = "diagnosticwarn", linehl = "", numhl = "" })
-        vim.fn.sign_define("diagnosticsignhint", { text = "󰌵", texthl = "diagnostichint", linehl = "", numhl = "" })
-        vim.fn.sign_define("diagnosticsigninfo", { text = " ", texthl = "diagnosticinfo", linehl = "", numhl = "" })
+        vim.diagnostic.config({
+          signs = {
+            text = {
+              [vim.diagnostic.severity.ERROR] = " ",
+              [vim.diagnostic.severity.WARN] = " ",
+              [vim.diagnostic.severity.HINT] = "󰌵",
+              [vim.diagnostic.severity.INFO] = " ",
+            },
+          },
+        })
       '';
 
     clipboard = {
@@ -68,7 +74,7 @@
       # Set the time to wait for a key sequence to complete in milliseconds
       timeoutlen = 300;
 
-      # Enable 24-bit RBG color support
+      # Enable 24-bit RGB color support
       termguicolors = true;
 
       # Open new windows below the current one

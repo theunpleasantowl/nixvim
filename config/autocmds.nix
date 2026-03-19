@@ -26,7 +26,9 @@
       callback = {
         __raw = ''
           function()
-            vim.cmd('Startup')
+            if vim.fn.argc() == 0 and vim.fn.line2byte(vim.fn.line('$')) == -1 then
+              vim.cmd('Startup')
+            end
           end
         '';
       };

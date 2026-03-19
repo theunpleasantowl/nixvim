@@ -4,16 +4,16 @@ _: {
     settings = {
       signs = {
         add = {
-          text = " ";
+          text = " ";
         };
         change = {
-          text = " ";
+          text = " ";
         };
         delete = {
-          text = " ";
+          text = " ";
         };
         untracked = {
-          text = "";
+          text = "";
         };
         topdelete = {
           text = "󱂥 ";
@@ -21,16 +21,16 @@ _: {
         changedelete = {
           text = "󱂧 ";
         };
-        numhl = true;
-        linehl = false;
-        word_diff = false;
-        current_line_blame = true;
-        current_line_blame_opts = {
-          delay = 500;
-          position = "eol";
-        };
-        current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d> - <summary>";
       };
+      numhl = true;
+      linehl = false;
+      word_diff = false;
+      current_line_blame = true;
+      current_line_blame_opts = {
+        delay = 500;
+        position = "eol";
+      };
+      current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d> - <summary>";
     };
   };
 }

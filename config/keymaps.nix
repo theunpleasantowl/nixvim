@@ -177,11 +177,6 @@
       action = ".<c-g>u";
     }
     {
-      mode = "i";
-      key = ";";
-      action = ";<c-g>u";
-    }
-    {
       mode = [
         "i"
         "x"
@@ -269,32 +264,8 @@
     }
     {
       mode = "n";
-      key = "<leader>cd";
-      action = "vim.diagnostic.open_float";
-      options = {
-        desc = "Line Diagnostics";
-      };
-    }
-    {
-      mode = "n";
-      key = "]d";
-      action = "diagnostic_goto(true)";
-      options = {
-        desc = "Next Diagnostic";
-      };
-    }
-    {
-      mode = "n";
-      key = "[d";
-      action = "diagnostic_goto(false)";
-      options = {
-        desc = "Prev Diagnostic";
-      };
-    }
-    {
-      mode = "n";
       key = "]e";
-      action = "diagnostic_goto(true 'ERROR')";
+      action = "<cmd>lua vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })<cr>";
       options = {
         desc = "Next Error";
       };
@@ -302,7 +273,7 @@
     {
       mode = "n";
       key = "[e";
-      action = "diagnostic_goto(false 'ERROR')";
+      action = "<cmd>lua vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })<cr>";
       options = {
         desc = "Prev Error";
       };
@@ -310,7 +281,7 @@
     {
       mode = "n";
       key = "]w";
-      action = "diagnostic_goto(true 'WARN')";
+      action = "<cmd>lua vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.WARN })<cr>";
       options = {
         desc = "Next Warning";
       };
@@ -318,7 +289,7 @@
     {
       mode = "n";
       key = "[w";
-      action = "diagnostic_goto(false 'WARN')";
+      action = "<cmd>lua vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.WARN })<cr>";
       options = {
         desc = "Prev Warning";
       };
@@ -334,7 +305,7 @@
     {
       mode = "n";
       key = "<leader>ui";
-      action = "vim.show_pos";
+      action = "<cmd>lua vim.show_pos()<cr>";
       options = {
         desc = "Inspect Pos";
       };
