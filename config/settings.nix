@@ -16,11 +16,6 @@
         })
       '';
 
-    clipboard = {
-      # Enable the wl-copy provider for clipboard functionality
-      providers.wl-copy.enable = true;
-    };
-
     opts = {
       # Display line numbers on the left
       number = true;
