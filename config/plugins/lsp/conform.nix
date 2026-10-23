@@ -114,7 +114,6 @@
             __unkeyed-2 = "prettier";
             stop_after_first = true;
           };
-          bicep = [ "bicep" ];
           bash = [
             "shellcheck"
             "shellharden"
@@ -151,9 +150,6 @@
           };
           shellharden = {
             command = "${lib.getExe pkgs.shellharden}";
-          };
-          bicep = {
-            command = "${lib.getExe pkgs.bicep}";
           };
         };
       };
